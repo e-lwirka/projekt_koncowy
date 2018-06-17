@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&subset=latin-ext');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.flaticons {
+    color: grey;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+section {
+    padding: 100px 0;
+}
+
+header {
+    height: 100vh;
+    background-image: url("../images/drivermd.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+}
+
+.page-header-header {
+    position: relative;
+    top: 80px;
+}
+
+.page-header h1,
+.page-header h2 {
+    font-size: 45px;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+}
+
+.page-header h2 {
+    font-size: 42px;
+}
+
+.header-telefon {
+    font-size: 26px;
+    color: #ff9c00;
+    font-weight: 300;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 250px 80px;
+}
+
+.menu li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.menu a {
+    /*color: #ff9c00;*/
+    color: #bababa;
+    text-transform: lowercase;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.menu a:hover {
+    text-decoration: none;
+}
+
+.offer-link {
+    color: black;
+}
+
+.page-header h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 9px;
+}
+
+.page-header h2 {
+    border: 1px solid grey;
+    margin: auto;
+    width: 300px;
+    padding: 11px;
+    border-radius: 9px;
+    font-weight: 300;
+}
+
+.page-header .container {
+    /*display: flex;*/
+}
+
+.menu-o-mnie::before,
+.menu-badania:before,
+.menu-lokalizacja:before,
+.menu-kontakt:before,
+.menu-fb:before {
+    content: "";
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    background-color: #ff9c00;
+    /*background-image: url("../images/psycho-gradient.png");*/
+    position: absolute;
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    bottom: 40px;
+}
+
+.menu-o-mnie::before {
+    background-image: url("../images/icons/woman-hair.svg");
+}
+
+.menu-badania:before {
+    background-image: url("../images/icons/calendar.svg");
+}
+
+.menu-lokalizacja:before {
+    background-image: url("../images/icons/placeholder.svg");
+}
+
+.menu-kontakt:before {
+    background-image: url("../images/icons/telefon.svg");
+}
+
+.menu-fb:before {
+    background-image: url("../images/icons/facebook.svg");
+}
+
+
+.o-mnie h3,
+.badania h3,
+.lokalizacja h3,
+.kontakt h3 {
+    font-size: 34px;
+    color: #ff9c00;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.o-mnie h3::before,
+.badania h3:before,
+.lokalizacja h3:before,
+.kontakt h3:before {
+    content: "";
+    display: block;
+    border-bottom: 2px solid grey;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+}
+
+
+.badania {
+    background-color: #f5f5f0;
+}
+
+.badania .row {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 40px;
+}
+
+.badania .col-6 {
+    border: 2px solid grey;
+    margin-right: 6px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex: 1 1 24%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 220px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /*background-color: #ff9c00;*/
+}
+
+.badania .col-6:last-child {
+    margin-right: 0;
+}
+
+.badania .col-6 a {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 23px 0;
+}
+
+.badania h4 {
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    display: block;
+    padding: 14px;
+}
+
+.badania-opis {
+    color: white;
+    margin-top: 8px;
+    font-weight: 300;
+    text-transform: lowercase;
+    font-size: 17px;
+    padding: 0 18px;
+}
+
+.badania-czytaj-wiecej {
+    display: block;
+}
+
+
+.badania .col-6:hover {
+    text-decoration: none;
+    transform: scale(1.25);
+}
+
+.offer-link h4:hover,
+.offer-link .badania-opis:hover {
+    color: #ff9c00;
+    transition: 0.5s all;
+}
+
+.lokalizacja {
+    padding: 50px 0 0 0 ;
+    background-color: #e0e0e0;
+}
+
+
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+    margin-top: 20px;
+}
+
+.kontakt {
+    background-color: #e0e0e0;
+}
+
+.kontakt h3 {
+    padding-bottom: 60px;
+}
+
+[class^="col-4 box"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+[class^="icon-"] {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 25px;
+}
+
+.icon-telefon {
+    background-image: url("../images/icons/telefon.svg");
+}
+
+.icon-mail {
+    background-image: url("../images/icons/mail.svg");
+}
+
+.icon-adres {
+    background-image: url("../images/icons/adres.svg");
+}
+
+.telefon,
+.mail,
+.ulica,
+.kod {
+    font-size: 28px;
+    color: #ff9c00;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
