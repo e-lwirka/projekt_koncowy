@@ -10,3 +10,22 @@ function initMap() {
     // The marker, positioned at Nienadowka
     var marker = new google.maps.Marker({position: nienadowka, map: map});
 }
+
+jQuery(function($) {
+    $('header.page-header nav').find('a').click(function (e) {
+        const url = $(this).attr('href');
+
+        if (url.startsWith('#')) {
+            const sectionId = url.substring(1);
+
+            const sectionDiv = $('[data-anchor="' + sectionId + '"]');
+
+            if (sectionDiv.length) {
+                $('html, body').animate({
+                   scrollTop: sectionDiv.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});

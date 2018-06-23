@@ -46,8 +46,19 @@ function psycho_styles() {
         get_stylesheet_directory_uri() . '/css/reset.css',
         true );
 
+    wp_enqueue_script(
+        'FP-js',
+        get_stylesheet_directory_uri() . '/fullPage/jquery.fullPage.js',
+        true );
+
+    wp_enqueue_style(
+        'FP-css',
+        get_stylesheet_directory_uri() . '/fullPage/jquery.fullPage.css',
+        true );
+
 
     wp_enqueue_script('js', get_stylesheet_directory_uri() . '/js/main.js', ['jquery'], null, true);
+
 
 }
 add_action( 'wp_enqueue_scripts' , 'psycho_styles' );

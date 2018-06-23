@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<header class="page-header">
+<header class="page-header" data-anchor="header">
     <div class="mask">
         <div class="container">
 
@@ -31,6 +31,15 @@
                     'menu_class' => 'menu'
                 ]);
                 ?>
+<!--                <div>-->
+<!--                    <ul id="main-menu" class="menu">-->
+<!--                        <li class="menu-o-mnie"><a href="#o-mnie">o mnie</a></li>-->
+<!--                        <li class="menu-badania"><a href="#badania">badania</a></li>-->
+<!--                        <li class="menu-lokalizacja"><a href="#lokalizacja">lokalizacja</a></li>-->
+<!--                        <li class="menu-kontakt"><a href="#kontakt">kontakt</a></li>-->
+<!--                        <li class="menu-fb"><a target="_blank" href="http://facebook.com">facebook</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </nav>
 
         </div>
@@ -38,7 +47,7 @@
 </header>
 <!----- header ----->
 
-<section class="o-mnie">
+<section class="o-mnie" data-anchor="o-mnie">
     <div class="container">
         <?php
         $omnie = new WP_Query([
@@ -61,7 +70,7 @@
 </section>
 <!----- o mnie ----->
 
-<section class="badania">
+<section class="badania" data-anchor="badania">
     <div class="container">
         <?php
         $offers = new WP_Query([
@@ -71,7 +80,7 @@
         <div class="row">
             <?php if ($offers->have_posts()) : while ($offers->have_posts()) : $offers->the_post(); ?>
 
-                <div class="col-6" style="
+                <div class="col-3" style="
                         background-image: url(<?php echo the_post_thumbnail_url(); ?>);
                         background-size: cover;
                         ">
@@ -83,6 +92,8 @@
                     </a>
 
                 </div>
+
+
                 <!-- post -->
             <?php endwhile; ?>
                 <!-- post navigation -->
@@ -94,7 +105,7 @@
 </section>
 <!----- badania ----->
 
-<section class="lokalizacja">
+<section class="lokalizacja" data-anchor="lokalizacja">
     <div class="container">
         <h3>Lokalizacja</h3>
     </div>
@@ -104,7 +115,7 @@
 </section>
 <!----- lokalizacja ----->
 
-<section class="kontakt">
+<section class="kontakt" data-anchor="kontakt">
     <div class="container">
         <h3>Kontakt</h3><br>
         <?php
@@ -135,8 +146,10 @@
 
                 <div class="col-4 box-adres">
                     <div class="icon-adres"></div>
+                    <div class="ulica-kod">
                     <div class="ulica"><?php the_field('ulica') ?></div>
                     <div class="kod"><?php the_field('kod') ?></div>
+                    </div>
                 </div>
 
                 <?php the_content(); ?>

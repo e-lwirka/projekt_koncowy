@@ -15,10 +15,11 @@ body {
 
 section {
     padding: 100px 0;
+    /*height: 100vh;*/
 }
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../images/drivermd.jpg");
     background-size: cover;
     background-position: center;
@@ -29,10 +30,7 @@ header {
     min-height: 100vh;
 }
 
-.page-header-header {
-    position: relative;
-    top: 80px;
-}
+.page-header-header {}
 
 .page-header h1,
 .page-header h2 {
@@ -47,17 +45,18 @@ header {
 }
 
 .header-telefon {
-    font-size: 26px;
+    font-size: 45px;
     color: #ff9c00;
     font-weight: 300;
     text-align: center;
+    margin: 1em 0;
 }
 
 .menu {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    padding: 250px 80px;
+    padding-bottom: 20px;
 }
 
 .menu li {
@@ -72,6 +71,7 @@ header {
     text-transform: lowercase;
     font-weight: 300;
     font-size: 20px;
+    padding-top: 12px;
 }
 
 .menu a:hover {
@@ -85,7 +85,7 @@ header {
 .page-header h1 {
     font-size: 16px;
     text-transform: uppercase;
-    margin-top: 9px;
+    margin-top: 7px;
 }
 
 .page-header h2 {
@@ -98,45 +98,73 @@ header {
 }
 
 .page-header .container {
-    /*display: flex;*/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.menu-o-mnie::before,
-.menu-badania:before,
-.menu-lokalizacja:before,
-.menu-kontakt:before,
-.menu-fb:before {
+/*.menu-o-mnie::before,*/
+/*.menu-badania:before,*/
+/*.menu-lokalizacja:before,*/
+/*.menu-kontakt:before,*/
+/*.menu-fb:before {*/
+    /*content: "";*/
+    /*border-radius: 50%;*/
+    /*height: 120px;*/
+    /*width: 120px;*/
+    /*background-color: #ff9c00;*/
+    /*!*background-image: url("../images/psycho-gradient.png");*!*/
+    /*position: absolute;*/
+    /*background-position: center;*/
+    /*background-size: 65%;*/
+    /*background-repeat: no-repeat;*/
+    /*bottom: 40px;*/
+/*}*/
+
+.menu a::before {
     content: "";
     border-radius: 50%;
     height: 120px;
     width: 120px;
     background-color: #ff9c00;
-    /*background-image: url("../images/psycho-gradient.png");*/
-    position: absolute;
+    display: block;
     background-position: center;
     background-size: 65%;
     background-repeat: no-repeat;
     bottom: 40px;
+    transition: none;
+    margin-bottom: 16px;
 }
 
-.menu-o-mnie::before {
+.menu-item:hover a::before {
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+
+.menu-o-mnie a::before {
     background-image: url("../images/icons/woman-hair.svg");
 }
 
-.menu-badania:before {
+.menu-badania a::before {
     background-image: url("../images/icons/calendar.svg");
 }
 
-.menu-lokalizacja:before {
+.menu-lokalizacja a::before {
     background-image: url("../images/icons/placeholder.svg");
 }
 
-.menu-kontakt:before {
+.menu-kontakt a::before {
     background-image: url("../images/icons/telefon.svg");
 }
 
-.menu-fb:before {
+.menu-fb a::before {
     background-image: url("../images/icons/facebook.svg");
+    /*margin: auto;*/
+}
+
+.menu a {
+    text-align: center;
 }
 
 
@@ -174,7 +202,7 @@ header {
     margin-top: 40px;
 }
 
-.badania .col-6 {
+.badania .col-3 {
     border: 2px solid grey;
     margin-right: 6px;
     padding-left: 0;
@@ -192,15 +220,28 @@ header {
     /*background-color: #ff9c00;*/
 }
 
-.badania .col-6:last-child {
+.badania .col-3:last-child {
     margin-right: 0;
 }
 
-.badania .col-6 a {
+.badania .col-3 a {
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 23px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
 }
+
+.badania .col-3 a:hover .badania-opis,
+.badania .col-3 a:hover h4 {
+    color: #ff9c00;
+    transition: 0.5s;
+}
+
+
 
 .badania h4 {
     text-transform: uppercase;
@@ -208,6 +249,7 @@ header {
     width: 100%;
     display: block;
     padding: 14px;
+    font-size: 19px;
 }
 
 .badania-opis {
@@ -215,7 +257,7 @@ header {
     margin-top: 8px;
     font-weight: 300;
     text-transform: lowercase;
-    font-size: 17px;
+    font-size: 15px;
     padding: 0 18px;
 }
 
@@ -224,16 +266,16 @@ header {
 }
 
 
-.badania .col-6:hover {
-    text-decoration: none;
-    transform: scale(1.25);
-}
+/*.badania .col-3:hover {*/
+    /*text-decoration: none;*/
+    /*transform: scale(1.25);*/
+/*}*/
 
-.offer-link h4:hover,
-.offer-link .badania-opis:hover {
-    color: #ff9c00;
-    transition: 0.5s all;
-}
+/*.offer-link h4:hover,*/
+/*.offer-link .badania-opis:hover {*/
+    /*color: #ff9c00;*/
+    /*transition: 0.5s all;*/
+/*}*/
 
 .lokalizacja {
     padding: 50px 0 0 0 ;
@@ -251,7 +293,7 @@ header {
 
 .kontakt {
     background-color: #e0e0e0;
-}
+    }
 
 .kontakt h3 {
     padding-bottom: 60px;
@@ -267,6 +309,8 @@ header {
     height: 100px;
     width: 100px;
     margin-bottom: 25px;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .icon-telefon {
@@ -288,7 +332,100 @@ header {
     font-size: 28px;
     color: #ff9c00;
     font-weight: bold;
+    margin-left: -16px;
 }
+
+.ulica-kod {
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .kontakt .row {
+        flex-direction: column;
+    }
+
+    [class^="col-4 box"] {
+        flex-direction: row;
+        max-width: 900px;
+    }
+
+    [class^="icon-"] {
+        margin-right: 40px;
+    }
+
+    .ulica-kod {
+        text-align: left;
+    }
+
+    .kontakt .row {
+        margin-left: 16%;
+    }
+
+    .badania .col-3 {
+        width: 39%;
+        margin: 8px;
+        max-width: 44%;
+        height: 230px;
+        flex: 0 0 49%;
+    }
+
+    .badania h4 {
+        font-size: 20px;
+    }
+
+    .badania-opis {
+        /*display: none;*/
+        /*flex: 1 1 50%;*/
+        /*max-width: 49%;*/
+    }
+}
+
+@media (max-width: 770px) {
+    .page-header h2 {
+        margin-top: 30px;
+    }
+
+    .kontakt [class^="icon-"] {
+        margin-bottom: 0;
+        height: 84px;
+        width: 50px;
+        background-position: center;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu li {
+        width: 135px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 0 10px 20px 10px;
+    }
+
+    .kontakt .row {
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 500px) {
+    .kontakt .row {
+        margin-left: 0;
+    }
+
+    .telefon,
+    .mail,
+    .ulica,
+    .kod {
+        font-size: 22px;
+    }
+}
+
 
 
 
