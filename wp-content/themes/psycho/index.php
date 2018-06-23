@@ -14,13 +14,19 @@
                 'pagename' => 'kontakt'
             ]); ?>
             <?php if ($telefon->have_posts()) : while ($telefon->have_posts()) : $telefon->the_post(); ?>
-              <!-- post -->
-                <div class="header-telefon"><?php the_field('telefon') ?></div>
+                <!-- post -->
 
+                <a class="header-telefon" href="tel:<?php the_field('telefon') ?>">
+                    <?php the_field('telefon') ?>
+                </a>
+
+                <a class="header-telefon" href="tel:<?php the_sub_field('telefono') ?>">
+                    <?php the_sub_field('telefono') ?>
+                </a>
             <?php endwhile; ?>
-              <!-- post navigation -->
+                <!-- post navigation -->
             <?php else: ?>
-              <!-- no posts found -->
+                <!-- no posts found -->
             <?php endif; ?>
 
 
@@ -31,15 +37,15 @@
                     'menu_class' => 'menu'
                 ]);
                 ?>
-<!--                <div>-->
-<!--                    <ul id="main-menu" class="menu">-->
-<!--                        <li class="menu-o-mnie"><a href="#o-mnie">o mnie</a></li>-->
-<!--                        <li class="menu-badania"><a href="#badania">badania</a></li>-->
-<!--                        <li class="menu-lokalizacja"><a href="#lokalizacja">lokalizacja</a></li>-->
-<!--                        <li class="menu-kontakt"><a href="#kontakt">kontakt</a></li>-->
-<!--                        <li class="menu-fb"><a target="_blank" href="http://facebook.com">facebook</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
+                <!--                <div>-->
+                <!--                    <ul id="main-menu" class="menu">-->
+                <!--                        <li class="menu-o-mnie"><a href="#o-mnie">o mnie</a></li>-->
+                <!--                        <li class="menu-badania"><a href="#badania">badania</a></li>-->
+                <!--                        <li class="menu-lokalizacja"><a href="#lokalizacja">lokalizacja</a></li>-->
+                <!--                        <li class="menu-kontakt"><a href="#kontakt">kontakt</a></li>-->
+                <!--                        <li class="menu-fb"><a target="_blank" href="http://facebook.com">facebook</a></li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
             </nav>
 
         </div>
@@ -77,10 +83,10 @@
             'post_type' => 'offer'
         ]); ?>
         <h3>Badania</h3>
-        <div class="row">
+        <div class="badania-container">
             <?php if ($offers->have_posts()) : while ($offers->have_posts()) : $offers->the_post(); ?>
 
-                <div class="col-3" style="
+                <div class="badania-item" style="
                         background-image: url(<?php echo the_post_thumbnail_url(); ?>);
                         background-size: cover;
                         ">
@@ -134,8 +140,10 @@
             <?php if ($kontakt->have_posts()) : while ($kontakt->have_posts()) : $kontakt->the_post(); ?>
                 <!-- post -->
                 <div class="col-4 box-telefon">
-                <div class="icon-telefon"></div>
-                    <div class="telefon"><?php the_field('telefon') ?></div>
+                    <div class="icon-telefon"></div>
+                    <a class="telefon" href="tel:<?php the_field('telefon') ?>">
+                        <?php the_field('telefon') ?>
+                    </a>
                 </div>
 
                 <div class="col-4 box-mail">
@@ -147,8 +155,8 @@
                 <div class="col-4 box-adres">
                     <div class="icon-adres"></div>
                     <div class="ulica-kod">
-                    <div class="ulica"><?php the_field('ulica') ?></div>
-                    <div class="kod"><?php the_field('kod') ?></div>
+                        <div class="ulica"><?php the_field('ulica') ?></div>
+                        <div class="kod"><?php the_field('kod') ?></div>
                     </div>
                 </div>
 
@@ -163,5 +171,34 @@
     </div>
 </section>
 <!----- kontakt ----->
+
+<section class="test">
+    <?php
+    // check if the repeater field has rows of data
+    if(have_rows('telefony') ):
+
+        // loop through the rows of data
+        while (have_rows('telefony') ) :the_row();
+
+            // display a sub field value
+            ?>
+
+                <div class="telefon">
+                    <?php the_sub_field('telefon'); ?>
+                </div>
+
+    <?php
+        endwhile;
+
+    else :
+
+        // no rows found
+
+    endif;
+
+    ?>
+
+</section>
+
 
 <?php get_footer(); ?>
