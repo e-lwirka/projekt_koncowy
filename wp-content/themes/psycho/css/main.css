@@ -18,6 +18,10 @@ section {
     /*height: 100vh;*/
 }
 
+footer {
+    padding: 50px 0;
+}
+
 .page-header {
     min-height: 100vh;
     background-image: url("../images/drivermd.jpg");
@@ -153,7 +157,7 @@ section {
     background-repeat: no-repeat;
     bottom: 40px;
     transition: none;
-    margin-bottom: 16px;
+    margin: 0 auto 16px;
 }
 
 .menu-item:hover a::before {
@@ -384,97 +388,8 @@ section {
 
 
 
-@media (max-width: 1000px) {
-    .ulica-kod {
-        text-align: left;
-    }
 
-    .badania-container {
-        flex-wrap: wrap;
-    }
 
-    .badania-item {
-
-        margin: 10px;
-        flex: 1 1 38%;
-        height: 245px;
-    }
-
-    .telefon, .mail, .ulica, .kod {
-        color: #ff9c00;
-        font-weight: bold;
-        font-size: 22px;
-        padding-bottom: 5px;
-    }
-}
-
-@media (max-width: 770px) {
-    .page-header h2, .single-offer-header h2 {
-        margin-top: 30px;
-    }
-
-    .kontakt [class^="icon-"] {
-        margin-bottom: 0;
-        height: 84px;
-        width: 50px;
-        background-position: center;
-        margin-right: 15px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .menu li {
-        width: 135px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-
-    .kontakt-container {
-        flex-direction: column;
-    }
-
-    .kontakt-item {
-        flex-direction: row;
-    }
-}
-
-@media (max-width: 517px) {
-    .badania-item {
-        flex: 1 1 100%;
-    }
-
-    .kontakt-container {
-        margin-left: 0;
-        padding: 0 12%;
-    }
-
-    .telefon,
-    .mail,
-    .ulica,
-    .kod {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 420px) {
-    .page-header h2, .single-offer-header h2 {
-        width: 80%;
-    }
-
-    .telefon, .mail, .ulica, .kod {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 420px) {
-    .page-header h2, .single-offer-header h2 {
-        font-size: 30px;
-    }
-}
 
 /*@media (max-width: 320px) {*/
     /*.menu li {*/
@@ -593,8 +508,156 @@ section {
 
 
 
+/*================== media =====================*/
+@media (max-width: 1000px) {
+    .ulica-kod {
+        text-align: left;
+    }
+
+    .badania-container {
+        flex-wrap: wrap;
+    }
+
+    .badania-item {
+
+        margin: 10px;
+        flex: 1 1 38%;
+        height: 245px;
+    }
+
+    .telefon, .mail, .ulica, .kod {
+        color: #ff9c00;
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 770px) {
+    .page-header h2, .single-offer-header h2 {
+        margin-top: 30px;
+    }
+
+    .kontakt [class^="icon-"] {
+        margin-bottom: 0;
+        height: 84px;
+        width: 50px;
+        background-position: center;
+        margin-right: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu li {
+        width: 100px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu a::before {
+        width: 60px;
+        height: 60px;
+    }
+
+    .kontakt-container {
+        flex-direction: column;
+    }
+
+    .kontakt-item {
+        flex-direction: row;
+    }
+
+    .single-offer-container {
+        width: 85%;
+    }
+
+    .link-back.left-arrow {
+        display: none;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 517px) {
+    .badania-item {
+        flex: 1 1 100%;
+    }
+
+    .kontakt-container {
+        margin-left: 0;
+        padding: 0 12%;
+    }
+
+    .telefon,
+    .mail,
+    .ulica,
+    .kod {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-header h2,
+    .single-offer-header h2 {
+        width: 80%;
+        font-size: 30px;
+    }
+
+    .single-offer-header .link-back {
+        width: 100%;
+    }
 
 
+    .telefon, .mail, .ulica, .kod {
+        font-size: 15px;
+    }
+
+    /*.single-offer-content {*/
+        /*font-size: 12px;*/
+    /*}*/
+
+    .single-offer-content li::before {
+        left: -15px;
+        top: 7px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .single-offer-title {
+        font-size: 16px;
+    }
 
 
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
 
+
+    .menu li a {
+        min-width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #ff9c00;
+        color: black;
+        margin: 9px 0;
+        display: inline-block;
+        position: relative;
+        text-align: left;
+    }
+    .menu li a::before {
+        display: inline-block;
+        position: relative;
+        border-radius: 5px;
+        background-position: left;
+        left: 10px;
+        top: -24px;
+        background-color: transparent;
+    }
+}
