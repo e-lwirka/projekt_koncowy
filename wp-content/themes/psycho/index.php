@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-<header class="page-header" data-anchor="header">
+<header class="page-header"">
     <div class="mask">
         <div class="container">
 
-            <div class="page-header-header">
+            <div>
                 <h2>ZOFIA KRÓL</h2>
                 <h1>psychotesty - rzeszów</h1>
             </div>
@@ -16,13 +16,36 @@
             <?php if ($telefon->have_posts()) : while ($telefon->have_posts()) : $telefon->the_post(); ?>
                 <!-- post -->
 
-                <a class="header-telefon" href="tel:<?php the_field('telefon') ?>">
-                    <?php the_field('telefon') ?>
-                </a>
+                <!--                <a class="header-telefon" href="tel:--><?php //the_field('telefon') ?><!--">-->
+                <!--                    --><?php //the_field('telefon') ?>
+                <!--                </a>-->
+                <div class="header-telefon-box">
+                    <?php
+                    // check if the repeater field has rows of data
+                    if (have_rows('telefony')):
 
-                <a class="header-telefon" href="tel:<?php the_sub_field('telefono') ?>">
-                    <?php the_sub_field('telefono') ?>
-                </a>
+                        // loop through the rows of data
+                        while (have_rows('telefony')) :the_row();
+
+                            // display a sub field value
+                            ?>
+
+                            <a href="tel:+<?php the_sub_field('telefon'); ?>"
+                               class="header-telefon">
+                                <?php the_sub_field('telefon'); ?>
+                            </a>
+
+                            <?php
+                        endwhile;
+
+                    else :
+
+                        // no rows found
+
+                    endif;
+
+                    ?>
+                </div>
             <?php endwhile; ?>
                 <!-- post navigation -->
             <?php else: ?>
@@ -91,10 +114,8 @@
                         background-size: cover;
                         ">
                     <a href="<?php the_permalink(); ?>" class="offer-link">
-                        <h4><?php the_title(); ?></h4>
-                        <div class="badania-opis"><?php the_content(); ?></div>
-                        <!--            <a href="-->
-                        <?php //the_permalink(); ?><!--" class="badania-czytaj-wiecej">Czytaj więcej...</a>-->
+                        <h4><?php the_field('badania-box-naglowek'); ?></h4>
+                        <div class="badania-opis"><?php the_field('badania-podtytul'); ?></div>
                     </a>
 
                 </div>
@@ -130,29 +151,54 @@
             'pagename' => 'kontakt'
         ]); ?>
 
-        <form action="">
-
-        </form>
-
-
-        <div class="row">
+        <div class="kontakt-container">
 
             <?php if ($kontakt->have_posts()) : while ($kontakt->have_posts()) : $kontakt->the_post(); ?>
                 <!-- post -->
-                <div class="col-4 box-telefon">
+                <div class="kontakt-item box-telefon">
                     <div class="icon-telefon"></div>
-                    <a class="telefon" href="tel:<?php the_field('telefon') ?>">
-                        <?php the_field('telefon') ?>
+
+
+                    <div class="footer-telefon-box">
+                        <?php
+                        // check if the repeater field has rows of data
+                        if (have_rows('telefony')):
+
+                            // loop through the rows of data
+                            while (have_rows('telefony')) :the_row();
+
+                                // display a sub field value
+                                ?>
+
+                                <a href="tel:+<?php the_sub_field('telefon'); ?>"
+                                   class="telefon">
+                                    <?php the_sub_field('telefon'); ?>
+                                </a>
+
+                                <?php
+                            endwhile;
+
+                        else :
+
+                            // no rows found
+
+                        endif;
+
+                        ?>
+                    </div>
+
+
+                </div>
+
+                <div class="kontakt-item box-mail">
+
+                    <div class="icon-mail"></div>
+                    <a class="mail-link" href="mailto:<?php the_field('mail') ?>">
+                    <div class="mail"><?php the_field('mail') ?></div>
                     </a>
                 </div>
 
-                <div class="col-4 box-mail">
-
-                    <div class="icon-mail"></div>
-                    <div class="mail"><?php the_field('mail') ?></div>
-                </div>
-
-                <div class="col-4 box-adres">
+                <div class="kontakt-item box-adres">
                     <div class="icon-adres"></div>
                     <div class="ulica-kod">
                         <div class="ulica"><?php the_field('ulica') ?></div>
@@ -169,36 +215,12 @@
 
         </div>
     </div>
+
 </section>
 <!----- kontakt ----->
 
-<section class="test">
-    <?php
-    // check if the repeater field has rows of data
-    if(have_rows('telefony') ):
 
-        // loop through the rows of data
-        while (have_rows('telefony') ) :the_row();
-
-            // display a sub field value
-            ?>
-
-                <div class="telefon">
-                    <?php the_sub_field('telefon'); ?>
-                </div>
-
-    <?php
-        endwhile;
-
-    else :
-
-        // no rows found
-
-    endif;
-
-    ?>
-
-</section>
-
+<div style="background-color: #e0e0e0;"
+     class="flaticons">Icons made by <a class="flaticons" href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a class="flaticons" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a class="flaticons" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 <?php get_footer(); ?>

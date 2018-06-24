@@ -18,15 +18,26 @@ section {
     /*height: 100vh;*/
 }
 
-header {
+.page-header {
     min-height: 100vh;
     background-image: url("../images/drivermd.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+
+.header-telefon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-telefon:hover,
-.telefon:hover {
+.telefon:hover,
+.mail-link:hover {
     text-decoration: none;
     color: #ff9c00;
 }
@@ -36,17 +47,18 @@ header {
     min-height: 100vh;
 }
 
-.page-header-header {}
 
 .page-header h1,
-.page-header h2 {
+.single-offer-header h1 ,
+.page-header h2,
+.single-offer-header h2 {
     font-size: 45px;
     text-align: center;
     font-weight: 300;
     color: white;
 }
 
-.page-header h2 {
+.page-header h2, .single-offer-header h2 {
     font-size: 42px;
 }
 
@@ -55,7 +67,7 @@ header {
     color: #ff9c00;
     font-weight: 300;
     text-align: center;
-    margin: 1em 0;
+    padding: 10px 0;
 }
 
 .menu {
@@ -88,13 +100,14 @@ header {
     color: black;
 }
 
-.page-header h1 {
+.page-header h1,
+.single-offer-header h1 {
     font-size: 16px;
     text-transform: uppercase;
     margin-top: 7px;
 }
 
-.page-header h2 {
+.page-header h2, .single-offer-header h2 {
     border: 1px solid grey;
     margin: auto;
     width: 300px;
@@ -171,6 +184,11 @@ header {
 
 .menu a {
     text-align: center;
+}
+
+.o-mnie p {
+    font-size: 22px;
+    line-height: 30px;
 }
 
 
@@ -265,7 +283,10 @@ header {
     font-weight: 300;
     text-transform: lowercase;
     font-size: 15px;
-    padding: 0 18px;
+}
+
+.badania-item:first-child .badania-opis {
+    padding: 0 22px;
 }
 
 .badania-czytaj-wiecej {
@@ -289,8 +310,6 @@ header {
     background-color: #e0e0e0;
 }
 
-
-
 #map {
     width: 100%;
     height: 400px;
@@ -306,7 +325,19 @@ header {
     padding-bottom: 60px;
 }
 
-[class^="col-4 box"] {
+.kontakt-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.kontakt-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 33.33%;
+}
+
+[class^="kontakt-container box"] {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -318,6 +349,11 @@ header {
     margin-bottom: 25px;
     background-repeat: no-repeat;
     flex-shrink: 0;
+}
+
+.footer-telefon-box {
+    display: flex;
+    flex-direction: column;
 }
 
 .icon-telefon {
@@ -349,25 +385,8 @@ header {
 
 
 @media (max-width: 1000px) {
-    .kontakt .row {
-        flex-direction: column;
-    }
-
-    [class^="col-4 box"] {
-        flex-direction: row;
-        max-width: 900px;
-    }
-
-    [class^="icon-"] {
-        margin-right: 40px;
-    }
-
     .ulica-kod {
         text-align: left;
-    }
-
-    .kontakt .row {
-        margin-left: 16%;
     }
 
     .badania-container {
@@ -380,10 +399,17 @@ header {
         flex: 1 1 38%;
         height: 245px;
     }
+
+    .telefon, .mail, .ulica, .kod {
+        color: #ff9c00;
+        font-weight: bold;
+        font-size: 22px;
+        padding-bottom: 5px;
+    }
 }
 
 @media (max-width: 770px) {
-    .page-header h2 {
+    .page-header h2, .single-offer-header h2 {
         margin-top: 30px;
     }
 
@@ -392,6 +418,7 @@ header {
         height: 84px;
         width: 50px;
         background-position: center;
+        margin-right: 15px;
     }
 
     .menu {
@@ -404,21 +431,25 @@ header {
         position: relative;
         display: flex;
         justify-content: center;
-        margin: 10px;
     }
 
-    .kontakt .row {
-        margin-left: 10%;
+    .kontakt-container {
+        flex-direction: column;
+    }
+
+    .kontakt-item {
+        flex-direction: row;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 517px) {
     .badania-item {
         flex: 1 1 100%;
     }
 
-    .kontakt .row {
+    .kontakt-container {
         margin-left: 0;
+        padding: 0 12%;
     }
 
     .telefon,
@@ -429,26 +460,133 @@ header {
     }
 }
 
-@media (max-width: 320px) {
-    .menu li {
-        width: auto;
+@media (max-width: 420px) {
+    .page-header h2, .single-offer-header h2 {
+        width: 80%;
     }
 
-    .telefon,
-    .mail,
-    .ulica,
-    .kod {
-        font-size: 18px;
+    .telefon, .mail, .ulica, .kod {
+        font-size: 15px;
     }
+}
+
+@media (max-width: 420px) {
+    .page-header h2, .single-offer-header h2 {
+        font-size: 30px;
+    }
+}
+
+/*@media (max-width: 320px) {*/
+    /*.menu li {*/
+        /*width: auto;*/
+    /*}*/
+
+    /*.telefon,*/
+    /*.mail,*/
+    /*.ulica,*/
+    /*.kod {*/
+        /*font-size: 18px;*/
+    /*}*/
+/*}*/
+
+
+
+
+
+/*--------- sinegle-offer: ---------*/
+.single-offer-container {
+    width: 60%;
+    margin: auto;
+}
+
+.single-offer-header {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.single-offer-header .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    position: relative;
+}
+
+.single-offer-header .link-back {
+    display: block;
+    margin: 40px 0;
+}
+
+.link-back:hover {
+    text-decoration: none;
+}
+
+.single-offer-content {
+    text-decoration: none;
+    padding: 0;
+    font-size: 22px;
+    line-height: 30px;
+    padding-bottom: 50px;
+}
+
+.single-offer-content li {
+    margin: 1.5em 0;
+    list-style-type: none;
+    position: relative;
+}
+
+.single-offer-content li::before {
+    content: "";
+    background-image: url(../images/icons/right-arrow.svg);
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    display: block;
+    background-size: contain;
+    position: absolute;
+    left: -37px;
+
+}
+
+.single-offer-content ul ul li {
+    margin-left: 50px;
+}
+
+
+.single-offer-content ul li:last-child::after {
+    content: "";
 }
 
 
 
-.test {
-    height: 300px;
-    width: 300px;
-
+.single-offer-header .left-arrow {
+    display: block;
+    position: absolute;
+    background-image: url("../images/icons/left-arrow.svg");
+    background-position: center;
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    left: 25px;
+    margin: 0;
 }
+
+.single-offer-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.single-offer-footer {
+    height: 90px;
+    background-position: bottom;
+}
+
 
 
 
