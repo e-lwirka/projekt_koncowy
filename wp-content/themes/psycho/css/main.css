@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,700&amp;subset=latin-ext');
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
 }
 
 .flaticons {
@@ -14,7 +16,7 @@ body {
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
     /*height: 100vh;*/
 }
 
@@ -85,15 +87,18 @@ footer {
     position: relative;
     display: flex;
     justify-content: center;
+    width: 20%;
 }
 
 .menu a {
-    /*color: #ff9c00;*/
     color: #bababa;
     text-transform: lowercase;
     font-weight: 300;
     font-size: 20px;
-    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu a:hover {
@@ -127,24 +132,6 @@ footer {
     justify-content: space-evenly;
 }
 
-/*.menu-o-mnie::before,*/
-/*.menu-badania:before,*/
-/*.menu-lokalizacja:before,*/
-/*.menu-kontakt:before,*/
-/*.menu-fb:before {*/
-    /*content: "";*/
-    /*border-radius: 50%;*/
-    /*height: 120px;*/
-    /*width: 120px;*/
-    /*background-color: #ff9c00;*/
-    /*!*background-image: url("../images/psycho-gradient.png");*!*/
-    /*position: absolute;*/
-    /*background-position: center;*/
-    /*background-size: 65%;*/
-    /*background-repeat: no-repeat;*/
-    /*bottom: 40px;*/
-/*}*/
-
 .menu a::before {
     content: "";
     border-radius: 50%;
@@ -155,9 +142,8 @@ footer {
     background-position: center;
     background-size: 65%;
     background-repeat: no-repeat;
-    bottom: 40px;
     transition: none;
-    margin: 0 auto 16px;
+    margin-bottom: 10px;
 }
 
 .menu-item:hover a::before {
@@ -360,6 +346,10 @@ footer {
     flex-direction: column;
 }
 
+.footer-telefon-box .telefon {
+    margin-bottom: 4px;
+}
+
 .icon-telefon {
     background-image: url("../images/icons/telefon.svg");
 }
@@ -381,30 +371,11 @@ footer {
     font-weight: bold;
 }
 
+
+
 .ulica-kod {
     text-align: center;
 }
-
-
-
-
-
-
-
-/*@media (max-width: 320px) {*/
-    /*.menu li {*/
-        /*width: auto;*/
-    /*}*/
-
-    /*.telefon,*/
-    /*.mail,*/
-    /*.ulica,*/
-    /*.kod {*/
-        /*font-size: 18px;*/
-    /*}*/
-/*}*/
-
-
 
 
 
@@ -546,18 +517,6 @@ footer {
         margin-right: 15px;
     }
 
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .menu li {
-        width: 100px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-
     .menu a::before {
         width: 60px;
         height: 60px;
@@ -600,6 +559,10 @@ footer {
     .kod {
         font-size: 22px;
     }
+
+    .menu a {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -607,6 +570,10 @@ footer {
     .single-offer-header h2 {
         width: 80%;
         font-size: 30px;
+    }
+
+    .header-telefon {
+        font-size: 32px;
     }
 
     .single-offer-header .link-back {
@@ -617,10 +584,6 @@ footer {
     .telefon, .mail, .ulica, .kod {
         font-size: 15px;
     }
-
-    /*.single-offer-content {*/
-        /*font-size: 12px;*/
-    /*}*/
 
     .single-offer-content li::before {
         left: -15px;
@@ -633,31 +596,35 @@ footer {
         font-size: 16px;
     }
 
-
     .menu {
         flex-direction: column;
         align-items: center;
     }
 
-
+.menu li {
+    margin-bottom: 9px;
+}
     .menu li a {
         min-width: 200px;
         height: 50px;
         border-radius: 5px;
         background-color: #ff9c00;
+        /*background: linear-gradient(#FF9800, #ff5e00);*/
         color: black;
-        margin: 9px 0;
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
         position: relative;
         text-align: left;
+        justify-content: flex-start;
+
     }
     .menu li a::before {
-        display: inline-block;
+        display: block;
         position: relative;
         border-radius: 5px;
         background-position: left;
-        left: 10px;
-        top: -24px;
         background-color: transparent;
+        margin-left: 10px;
+        top: 3px;
     }
 }
