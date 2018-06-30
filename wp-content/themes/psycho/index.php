@@ -3,10 +3,15 @@
     <div class="mask">
         <div class="container">
 
-            <div>
+<!--            <div>-->
+<!--                <h2>ZOFIA KRÓL</h2>-->
+<!--                <h1>psychotesty - rzeszów</h1>-->
+<!--            </div>-->
+<!---->
+            <a href="<?php echo home_url(); ?>" class="link-back">
                 <h2>ZOFIA KRÓL</h2>
                 <h1>psychotesty - rzeszów</h1>
-            </div>
+            </a>
 
             <?php
             $telefon = new WP_Query([
@@ -142,4 +147,7 @@
 </section>
 <!----- lokalizacja ----->
 
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM9iUnSQ22vZ4-ucB__FnHPQ73EzMQt0A&callback=initMap">
+</script>
 <?php get_footer(); ?>

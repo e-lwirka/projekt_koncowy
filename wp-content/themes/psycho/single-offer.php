@@ -8,7 +8,9 @@ the_post(); ?>
             class="single-offer-header">
         <div class="mask">
             <a href="<?php echo home_url(); ?>"
-               class="link-back left-arrow"></a>
+               class="link-back left-arrow">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icons/left-arrow2.svg" alt="left-arrow" class="left-arrow-img">
+            </a>
 
             <a href="<?php echo home_url(); ?>" class="link-back">
                 <h2>ZOFIA KRÓL</h2>
@@ -32,7 +34,14 @@ the_post(); ?>
         <!-- no posts found -->
     <?php endif; ?>
 
+
+    <a href="<?php echo home_url(); ?>"
+       class="link-back single-offer-content-link-back">strona główna</a>
+
 </div>
+
+
+
 
 
 <?php get_footer(); ?>

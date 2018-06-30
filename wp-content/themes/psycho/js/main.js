@@ -1,5 +1,3 @@
-console.log("js dziala");
-
 // Initialize and add the map
 function initMap() {
     // The location of Nienadowka
