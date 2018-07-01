@@ -294,8 +294,15 @@ footer {
 .badania-item a:hover .badania-opis,
 .badania-item a:hover h4 {
     color: #ff9c00;
-    transition: 0.5s;
+    transition: 0.3s;
+    top: 10px;
 }
+
+.badania-item a:hover .badania-opis {
+    display: none;
+    transition: 0s;
+}
+
 
 .badania-item:hover {
     border: 2px solid #ff9c00;
@@ -317,6 +324,30 @@ footer {
     left: 0.5em;
     bottom: 0.5em;
     right: 0.5em;
+    animation: box-border-shrink 0.2s linear;
+}
+
+@keyframes box-border-shrink {
+    0% {
+        top: 1.5em;
+        left: 1.5em;
+        bottom: 1.5em;
+        right: 1.5em;
+    }
+
+    50% {
+        top: 1em;
+        left: 1em;
+        bottom: 1em;
+        right: 1em;
+    }
+
+    100% {
+        top: 0.5em;
+        left: 0.5em;
+        bottom: 0.5em;
+        right: 0.5em;
+    }
 }
 
 
@@ -500,7 +531,7 @@ footer {
     transition: 0.5s;
 }
 
-/* animacja button strona główna*/
+/* animacja button do strony głównej */
 /*----------------------------------------------------------------------------*/
 
 .single-offer-content-link-back::before {
