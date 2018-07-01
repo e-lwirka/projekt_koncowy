@@ -299,7 +299,7 @@ footer {
 }
 
 .badania-item a:hover .badania-opis {
-    display: none;
+    padding: 0 15px;
     transition: 0s;
 }
 
@@ -324,6 +324,7 @@ footer {
     left: 0.5em;
     bottom: 0.5em;
     right: 0.5em;
+    transition: 0.7s;
     animation: box-border-shrink 0.2s linear;
 }
 
