@@ -318,7 +318,7 @@ footer {
 .badania-item a:hover:before {
     content: "";
     display: block;
-    border: 2px solid #ff9c00;
+    border: 1px solid #ff9c00;
     position: absolute;
     top: 0.5em;
     left: 0.5em;
@@ -360,19 +360,42 @@ footer {
 
 .badania h4 {
     text-transform: uppercase;
-    color: white;
+    color: #ff9c00;
     width: 100%;
-    display: block;
+    display: inline-block;
     padding: 14px;
     font-size: 19px;
 }
 
+.badania h4::before {
+    content: "";
+    display: block;
+    border: 1px solid #ff9c00;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    bottom: 0.5em;
+    right: 0.5em;
+}
+
+.badania-item a:hover h4::before {
+    display: none;
+}
+
+
 .badania-opis {
+    display: none;
     color: white;
     margin-top: 8px;
     font-weight: 300;
     text-transform: lowercase;
     font-size: 15px;
+}
+
+.badania-item a:hover .badania-opis {
+    /*display: block;*/
+    /*color: red;*/
+    position: absolute;
 }
 
 .badania-item:first-child .badania-opis {
