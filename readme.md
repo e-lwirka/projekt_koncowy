@@ -19,3 +19,5 @@ The website is fully responsive and easy to use on desktops as well as on mobile
 
 
 **Website:** [psychotesty.elwirka.pl](psychotesty.elwirka.pl)
+
+**Contact:** elwira.pszczola@gmail.com
