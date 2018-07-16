@@ -10,9 +10,12 @@ The project is based on Wordpress.
 * JavaScript
 
 ## Wordpress plugins:
-* *Advanced Custom Fields* - very useful Wordpress plugin that allow the owner of the website to change e.g. the phone number, the adress etc. if needed.
+* **Advanced Custom Fields** - very useful Wordpress plugin that allow the owner of the website to change e.g. the phone number, the adress etc. if needed.
 
 ## RWD
 The website is fully responsive and easy to use on desktops as well as on mobiles.
 
-[psychotesty.elwirka.pl](psychotesty.elwirka.pl)
+
+
+
+**Website:** [psychotesty.elwirka.pl](psychotesty.elwirka.pl)
